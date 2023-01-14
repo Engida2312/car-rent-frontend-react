@@ -25,7 +25,7 @@ const Card = () => {
             <p>350</p>
         </div>
         <div className="card-action-btn">
-            <button className='book-btn'>Book Now</button>
+            <Link to="/booking/register" className='btn book-btn'>Book Now</Link>
             <Link to="/details" className='btn detail-btn'>Details</Link>
         </div>
     </div>

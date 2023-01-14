@@ -3,7 +3,7 @@ import Card from "../Components/Card"
 
 const Dashboard = () => {
   return (
-    <div className="">  
+    <div className="dashboard-outer-container">  
         <h3 className='title'>Cars for rent</h3>
         <div className="dashboard-container">
             <div id="cardsHeader" className="header-card center">

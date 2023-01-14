@@ -99,11 +99,9 @@ button:hover, .btn:hover{
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    /* border: solid 2px rgb(51, 184, 69); */
 
 }
 .card-detail, .card-price{
-    /* border: solid 1px black; */
     width: 100%;
     text-align: center;
     margin: 1rem;
@@ -136,24 +134,19 @@ button:hover, .btn:hover{
 }
 
 /* dashboard style */
+.dashboard-outer-container .title{
+    margin: 7rem 0 0 7rem ;
+}
 .dashboard-container{
-    margin: 7rem ;
+    margin: 5rem 10rem ;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
-    /* align-items: center; */
 }
  #cardsHeader{
     justify-content: center;
     gap: 7rem;
     
 }
-.cards-container{
-    /* width: 80%; */
-   
-}
-
-
 /* details page style */
 .center{
     display: flex;
@@ -216,7 +209,9 @@ td{
     width: 100%;
     gap: 2rem;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: center;
+    padding: 4rem;
+
 }
 .booking-form-container .left{
     width: 35%;
