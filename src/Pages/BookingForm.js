@@ -82,13 +82,13 @@ const BookingForm = () => {
         }
        
         // check if contact is an Indian number
-        if (formData.contact) {
-            const isIndianNumber = /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(formData.contact);
-            if (!isIndianNumber) {
-                newErrors.contact = 'Please enter a valid Indian contact number';
-                valid = false;
-            }
-        }
+        // if (formData.contact) {
+        //     const isIndianNumber = /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(formData.contact);
+        //     if (!isIndianNumber) {
+        //         newErrors.contact = 'Please enter a valid Indian contact number';
+        //         valid = false;
+        //     }
+        // }
     
         // date validation
         if (!formData.issue_date) {
@@ -121,7 +121,7 @@ const BookingForm = () => {
         <div className="right">
             <div className="form-header">
                 <h3>Booking Details</h3>
-                <img src={logo} alt="logo" />
+                <img src={logo}  />
             </div>
             <form onSubmit={handleSubmit} >
                 <div className="form-group">

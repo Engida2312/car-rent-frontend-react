@@ -7,11 +7,11 @@ import { showAllListings } from "../features/dashboard/dashboardSlice";
 const Dashboard = () => {
 
   const dispatch = useDispatch()
-  const {allListings, isLoading} = useSelector((state)=> state.dashboard)
+  const {allListings} = useSelector((state)=> state.dashboard)
 
     useEffect(()=>{
         dispatch(showAllListings())
-    }, [])    
+    }, [dispatch])    
 
   return (
     <div className="dashboard-outer-container">  

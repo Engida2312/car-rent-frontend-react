@@ -12,7 +12,7 @@ const Details = () => {
     
     useEffect(()=>{
         dispatch(showDetials(modal))
-    }, [modal]) 
+    }, [dispatch]) 
     
     const carDetail= useSelector((state)=> state.details.details.carDetail)
     const currentBooking= useSelector((state)=> state.details.details.currentBooking)
@@ -35,7 +35,7 @@ const Details = () => {
             <div className="center">        
         <div className='details-container'>
             <div className="header-container">
-                <img src={image} alt="image" />
+                <img src={image}  />
                 <div className="side-detail">
                     <h3>{carDetail.modal}</h3>
                     <div className='sm-detail-container'>

@@ -12,7 +12,7 @@ const Card = ({ modal, max_seat, color, rent_per_day}) => {
   return (
     <div className="card-container">
         <div className="card-img">
-            <img src={image} alt="car image" />
+            <img src={image} />
         </div>
         <div className="card-detail">
             <h3>{modal}</h3>
