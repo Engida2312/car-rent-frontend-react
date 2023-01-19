@@ -1,32 +1,37 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import image from "../Assets/Images/car-1.jpeg"
+import { Link, useNavigate } from 'react-router-dom'
+import image from "../Assets/Images/car-2.jpeg"
 import '../Assets/css/style.css'
 import {MdOutlineBorderColor, MdAirlineSeatReclineNormal} from 'react-icons/md'
 
-const Card = () => {
+import { useSelector } from 'react-redux'
+
+const Card = ({_id, modal, description, vehicle_number, max_seat, color, rent_per_day}) => {
+
+    const navigate = useNavigate()
+
   return (
     <div className="card-container">
         <div className="card-img">
             <img src={image} alt="car image" />
         </div>
         <div className="card-detail">
-            <h3>Hyundai Grand i10</h3>
+            <h3>{modal}</h3>
             <div className='sm-detail-container'>
                 <div className="sm-detail">
-                   <MdOutlineBorderColor/> <span>Color</span>
+                   <MdOutlineBorderColor/> <span>{color} </span>
                 </div>
                 <div className="sm-detail">
-                    <MdAirlineSeatReclineNormal/><span>Seates</span>
+                    <MdAirlineSeatReclineNormal/><span>{max_seat} Seates</span>
                 </div>
             </div>
         </div>
         <div className="card-price">
-            <p>350</p>
+            <p>{rent_per_day}</p>
         </div>
         <div className="card-action-btn">
             <Link to="/booking/register" className='btn book-btn'>Book Now</Link>
-            <Link to="/details" className='btn detail-btn'>Details</Link>
+            <button onClick={() => { navigate('/details/' + (modal)) }} className='btn detail-btn'>Details</button>
         </div>
     </div>
   )

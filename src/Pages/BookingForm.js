@@ -80,39 +80,32 @@ const BookingForm = () => {
             newErrors.contact = 'Contact is required';
             valid = false;
         }
-        // if(typeof(formData.contact) != Number){
-        //     newErrors.contact = 'Contact must be numbers';
-        //     valid = false;
-        // }
-        // if(formData.contact.length != 10 ){
-        //     newErrors.contact = 'Contact length must be 10 digits';
-        //     valid = false;
-        // }
+       
         // check if contact is an Indian number
-        // if (formData.contact) {
-        //     const isIndianNumber = /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(formData.contact);
-        //     if (!isIndianNumber) {
-        //         newErrors.contact = 'Please enter a valid Indian contact number';
-        //         valid = false;
-        //     }
-        // }
+        if (formData.contact) {
+            const isIndianNumber = /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(formData.contact);
+            if (!isIndianNumber) {
+                newErrors.contact = 'Please enter a valid Indian contact number';
+                valid = false;
+            }
+        }
     
         // date validation
-        if (!formData.issue) {
-            newErrors.issue = 'Issue date is required';
+        if (!formData.issue_date) {
+            newErrors.issue_date = 'Issue date is required';
             valid = false;
         }
     
-        if (!formData.return) {
-            newErrors.return = 'Return date is required';
+        if (!formData.return_date) {
+            newErrors.return_date = 'Return date is required';
             valid = false;
         }
         // check if issue date is earlier than return date
-        if (formData.issue && formData.return) {
-            const issueDate = new Date(formData.issue);
-            const returnDate = new Date(formData.return);
+        if (formData.issue_date && formData.return_date) {
+            const issueDate = new Date(formData.issue_date);
+            const returnDate = new Date(formData.return_date);
             if (issueDate > returnDate) {
-                newErrors.issue = 'Issue date should be earlier than return date';
+                newErrors.issue_date = 'Issue date should be earlier than return date';
                 valid = false;
             }
         }
@@ -133,7 +126,8 @@ const BookingForm = () => {
             <form onSubmit={handleSubmit} >
                 <div className="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder='Jane Doe' onChange={handleChange} value={formData.name}/>
+                    <input type="text" id="name" name="name" placeholder='John Doe' onChange={handleChange} value={formData.name}/>
+                    <input hidden type="text" id="modal" name="modal" onChange={handleChange} value="isuszu 12x"/>
                     <span className="error">{errors.name}</span>
                 </div>
                 <div className="form-group">
@@ -142,14 +136,14 @@ const BookingForm = () => {
                     <span className="error">{errors.contact}</span>
                 </div>
                 <div className="form-group">
-                    <label for="issue">Issue Date:</label>
-                    <input type="date" id="return" name="issue" placeholder='DD/MM/YYYY' onChange={handleChange} value={formData.issue}/>
-                    <span className="error">{errors.issue}</span>
+                    <label for="issue_date">Issue Date:</label>
+                    <input type="date" id="issue_date" name="issue_date" placeholder='DD/MM/YYYY' onChange={handleChange} value={formData.issue_date}/>
+                    <span className="error">{errors.issue_date}</span>
                 </div>
                 <div className="form-group">
-                    <label for="return">Return Date:</label>
-                    <input type="date" id="return" name="return" placeholder='DD/MM/YYYY' onChange={handleChange} value={formData.return}/>
-                    <span className="error">{errors.return}</span>
+                    <label for="return_date">Return Date:</label>
+                    <input type="date" id="return_date" name="return_date" placeholder='DD/MM/YYYY' onChange={handleChange} value={formData.return_date}/>
+                    <span className="error">{errors.return_date}</span>
                 </div>
                 <div className="form-group">
                     <input className='back-btn btn' type="submit" value="Back"/>

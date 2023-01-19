@@ -1,8 +1,11 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import swal from 'sweetalert';
 
+import bookingService from "./bookingService"
+
+
 const initialState = {
-    data: localStorage.getItem('data'),
+    data: null,
     isLoading: false,
     isError: false,
     isSuccess: false,
@@ -14,7 +17,7 @@ export const register = createAsyncThunk(
     async(data, thunkAPI)=>{
     try {
         // save data
-        return localStorage.setItem('data', JSON.stringify(data))
+        return await bookingService.register(data)
     } catch (error) {
         const message = (
             error.response && 
@@ -49,6 +52,8 @@ export  const bookingSlice = createSlice({
                 state.isLoading = false
                 state.isSuccess = true
                 state.data = action.payload
+                console.log("state.data")
+                console.log(state.data)
             })
             .addCase(register.rejected, (state, action)=>{
                 state.isLoading = false
