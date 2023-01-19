@@ -52,13 +52,13 @@ const Details = () => {
                     <div className="card-action-btn">
                         {currentBooking ?
                         <>
-                        <Link to="/booking/register" className='btn book-btn'>Book Now</Link>
 
-                            {/* <button disabled id='active' className='btn   book-btn'>Book Now</button> */}
+                            <button disabled id='active' className='btn   book-btn'>Book Now</button>
                             <span className='danger'>Currently unavailable</span>
                         </>
                         :
-                        <button id='inactive' className='btn   book-btn'>Book Now</button>
+                        <Link to="/booking/register" className='btn book-btn'>Book Now</Link>
+
                         }
                     </div>
                 </div>
