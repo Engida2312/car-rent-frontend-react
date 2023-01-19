@@ -50,7 +50,7 @@ const Details = () => {
                     <div className="card-action-btn">
                         {currentBooking ?
                         <>
-                            <button disabled id='inactive' className='btn   book-btn'>Book Now</button>
+                            <button disabled id='active' className='btn   book-btn'>Book Now</button>
                             <span className='danger'>Currently unavailable</span>
                         </>
                         :
