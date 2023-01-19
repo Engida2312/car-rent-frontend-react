@@ -4,9 +4,8 @@ import image from "../Assets/Images/car-2.jpeg"
 import '../Assets/css/style.css'
 import {MdOutlineBorderColor, MdAirlineSeatReclineNormal} from 'react-icons/md'
 
-import { useSelector } from 'react-redux'
 
-const Card = ({_id, modal, description, vehicle_number, max_seat, color, rent_per_day}) => {
+const Card = ({ modal, max_seat, color, rent_per_day}) => {
 
     const navigate = useNavigate()
 

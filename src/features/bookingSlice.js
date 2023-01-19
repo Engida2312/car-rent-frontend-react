@@ -1,6 +1,4 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import swal from 'sweetalert';
-
 import bookingService from "./bookingService"
 
 

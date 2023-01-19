@@ -1,5 +1,4 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Card from "./Components/Card";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Details from "./Pages/Details";

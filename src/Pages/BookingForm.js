@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux'
 import { register, reset } from '../features/bookingSlice';
@@ -23,7 +23,7 @@ const BookingForm = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const {data, isError, isSuccess, message } = useSelector( (state)=> state.booking)
+    const {data, isError, isSuccess } = useSelector( (state)=> state.booking)
     
     
     const handleSubmit = e => {
