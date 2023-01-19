@@ -53,7 +53,7 @@ const Details = () => {
                         {currentBooking ?
                         <>
 
-                            <button disabled id='active' className='btn   book-btn'>Book Now</button>
+                            <button disabled id='inactive' className='btn   book-btn'>Book Now</button>
                             <span className='danger'>Currently unavailable</span>
                         </>
                         :
