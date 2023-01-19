@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 import image from '../Assets/Images/car-1.jpeg'
 import {MdOutlineBorderColor, MdAirlineSeatReclineNormal} from 'react-icons/md'
 import { useDispatch, useSelector} from "react-redux";
