@@ -116,12 +116,12 @@ const BookingForm = () => {
   return (
     <div className='booking-form-container'>
         <div className="left">
-            <img src={bannerImg} alt="image" />
+            <img src={bannerImg} alt="" />
         </div>
         <div className="right">
             <div className="form-header">
                 <h3>Booking Details</h3>
-                <img src={logo}  />
+                <img src={logo} alt="" />
             </div>
             <form onSubmit={handleSubmit} >
                 <div className="form-group">
